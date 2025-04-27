@@ -5,7 +5,7 @@ const PortfolioContext = createContext();
 
 const PortfolioProvider = ({children}) => {
 
-    const extraPages = ["Projects"];
+    const extraPages = ["Projects", "Contact"];
 
     function determineInitialPage() {
         let initialPage = "Home";

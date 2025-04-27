@@ -5,15 +5,31 @@
   text-align: center;
 }
 
-.nav {
+.logo-area-primary {
+  display: flex;
+}
+
+.logo-area-secondary {
+  display: none;
+}
+
+header {
   background-color: var(--secondary-color);
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  /* gap: 30px; */
+  justify-content: center;
 }
 
 .header-link {
   width: 100px;
 }
 
-.header-link p {
+.header-link p, .header-link a {
   color: var(--highlight-color);
   background-color: var(--secondary-color);
 }
@@ -22,4 +38,26 @@
   color: var(--secondary-color);
   background-color: var(--highlight-color);
   font-weight: bold;
+}
+
+/* Change layout style for mobile or tablet when vertical - change menu to hamburger */
+@media screen and (orientation:portrait) {
+  .logo-area-primary {
+    display: none;
+  }
+  
+  .logo-area-secondary {
+    display: flex;
+  }
+}
+
+/* Change header to hamburger menu too if it's on a phone */
+@media screen and (max-width: 900px) {
+  .logo-area-primary {
+    display: none;
+  }
+  
+  .logo-area-secondary {
+    display: flex;
+  }
 }
