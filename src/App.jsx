@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import PortfolioProvider from './PortfolioContext'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home/Home'
+import Projects from './pages/Projects/Projects';
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [currentPage, setCurrentPage] = useState('Home');
+
+  function changeClass(linkName) {
+    setCurrentPage(linkName);
+  }
+
+  function getClass(linkName) {
+    let classN = linkName === currentPage ? 'header-link current' : 'header-link';
+    return classN;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <PortfolioProvider>
+      <Router>
+        <header>
+          <div className='logoHead'>
+            {/* <img src={logo} alt="Cinemood Logo" className="logo" /> */}
+            {/* <h1 className='headertitle'>CINEMOOD</h1> */}
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <div className={getClass('Home')} onClick={() => {changeClass("Home")}}>
+                  <Link to="/"><p>Home</p></Link>
+                </div>
+                <div className={getClass('Projects')} onClick={() => {changeClass("Projects")}}>
+                  <Link to="/projects"><p>Projects</p></Link>
+                </div>
+              </li>
+
+            </ul>
+          </nav>
+        </header>
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </div>
+      </Router>
+    </PortfolioProvider>
   )
 }
 
