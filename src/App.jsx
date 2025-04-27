@@ -1,13 +1,13 @@
 import './App.css'
-import PortfolioProvider from './PortfolioContext'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { PortfolioContext } from './PortfolioContext'
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home/Home'
 import Projects from './pages/Projects/Projects';
-import { useState } from 'react';
+import { useContext } from 'react';
 
 function App() {
 
-  const [currentPage, setCurrentPage] = useState('Home');
+  const {currentPage, setCurrentPage} = useContext(PortfolioContext);
 
   function changeClass(linkName) {
     setCurrentPage(linkName);
@@ -19,7 +19,6 @@ function App() {
   }
 
   return (
-    <PortfolioProvider>
       <Router>
         <header>
           <div className='logoHead'>
@@ -47,7 +46,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </PortfolioProvider>
   )
 }
 

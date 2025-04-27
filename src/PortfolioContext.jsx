@@ -1,12 +1,27 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 const PortfolioContext = createContext();
 
 const PortfolioProvider = ({children}) => {
 
+    const extraPages = ["Projects"];
 
-    return <PortfolioContext.Provider value={{}}>
+    function determineInitialPage() {
+        let initialPage = "Home";
+        for (const page of extraPages) {
+            let path = window.location.pathname;
+            if (path.includes(page.toLowerCase())) {
+              initialPage = page;
+              break;
+            }
+        }
+        return initialPage;
+    }
+
+    const [currentPage, setCurrentPage] = useState(determineInitialPage());
+
+    return <PortfolioContext.Provider value={{currentPage, setCurrentPage}}>
         {children}
     </PortfolioContext.Provider>
 }
