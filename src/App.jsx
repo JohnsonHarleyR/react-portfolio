@@ -13,6 +13,7 @@ import Contact3 from './pages/Contact/Contact3';
 import { useContext, useState } from 'react';
 import { Button, CloseButton, Drawer, Portal  } from '@chakra-ui/react'
 import barsIcon from './images/bars-icon.png';
+import resume from './assets/resume.pdf';
 
 function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -26,6 +27,10 @@ function App() {
     let classN = linkName === currentPage ? 'header-link current' : 'header-link';
     return classN;
   }
+  
+  function openResume() {
+    window.open(resume, '_blank');
+  };
 
   function getLogoArea(areaType) {
     return (
@@ -63,20 +68,28 @@ function App() {
               <Link to="/projects"><p>Projects</p></Link>
             </div>
           </li>
-            <div className={getClass('Contact')} onClick={() => {changeClass("Contact")}}>
-              <Link to="/contact"><p>Contact</p></Link>
-            </div>
           <li>
             <div className={getClass('GitHub')}>
               <p><a href="https://github.com/JohnsonHarleyR" target="_blank">GitHub</a></p>
             </div>
-          </li><li>
+          </li>
+          <li>
             <div className={getClass('LinkedIn')}>
             <p><a href="https://www.linkedin.com/in/johnsonharleyr" target="_blank">LinkedIn</a></p>
             </div>
-          </li><li>
+          </li>
+          <li>
             <div className={getClass('Resume')}>
-            <p><a href="src/assets/resume.pdf" target="_blank">Resume</a></p>
+            <p className="resume-link">
+              {/* Resume */}
+              <a onClick={openResume} target="_blank">Resume</a>
+              {/* <a href="src/assets/resume.pdf" target="_blank">Resume</a> */}
+              </p>
+            </div>
+          </li>
+          <li>
+            <div className={getClass('Contact')} onClick={() => {changeClass("Contact")}}>
+              <Link to="/contact"><p>Contact</p></Link>
             </div>
           </li>
         </ul>

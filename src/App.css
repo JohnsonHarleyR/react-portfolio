@@ -114,6 +114,11 @@ nav.secondary .header-link.current p {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.resume-link:hover {
+  cursor: pointer;
+}
+
 /* nav.secondary .header-link a:visited {
   color: var(--highlight-color);
 } */
