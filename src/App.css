@@ -1,32 +1,55 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+
+main {
+  background-color: red;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
 }
 
-.logo-area-primary {
+.right-area {
+  width: var(--container1-width);
+  background-color: aquamarine;
+}
+
+.logo-area.primary {
   display: flex;
 }
 
-.logo-area-secondary {
+.logo-area.secondary {
   display: none;
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 100%;
+  border: 1px solid yellow;
 }
 
 header {
   background-color: var(--secondary-color);
   display: flex;
+  width: 100%;
+  /* justify-content: flex-end; */
 }
 
 nav ul {
   list-style: none;
   display: flex;
   /* gap: 30px; */
-  justify-content: center;
+  width: 100%;
+  border: 1px solid greenyellow;
+  text-align: center;
+  justify-self: flex-end;
 }
 
 .header-link {
   width: 100px;
+  border: 1px solid red;
 }
 
 .header-link p, .header-link a {
@@ -40,24 +63,87 @@ nav ul {
   font-weight: bold;
 }
 
+.container1 {
+  background-color: pink;
+  width: 100%;
+  margin: 0;
+  justify-self: flex-end;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.container2 {
+  width: var(--container2-width);
+  height: 100%;
+  background-color: var(--primary-color);
+  margin: 0;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+
+.container2.secondary {
+  width: 100%;
+  display: none;
+}
+
+.container3 {
+  width: 100%;
+  background-color: var(--highlight-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+}
+
 /* Change layout style for mobile or tablet when vertical - change menu to hamburger */
 @media screen and (orientation:portrait) {
-  .logo-area-primary {
+  .logo-area.primary {
     display: none;
   }
   
-  .logo-area-secondary {
+  .logo-area.secondary {
     display: flex;
+  }
+
+  .right-area {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .container2.primary {
+    display: none;
+    width: 0%;
+  }
+  .container2.secondary {
+    display: flex;
+    width: 100%;
   }
 }
 
 /* Change header to hamburger menu too if it's on a phone */
 @media screen and (max-width: 900px) {
-  .logo-area-primary {
+  .right-area {
+    width: 100%;
+  }
+
+  .logo-area.primary {
     display: none;
   }
   
-  .logo-area-secondary {
+  .logo-area.secondary {
     display: flex;
+  }
+
+  .container2.primary {
+    display: none;
+    width: 0%;
+  }
+  .container2.secondary {
+    display: flex;
+    width: 100%;
   }
 }
