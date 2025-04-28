@@ -10,11 +10,12 @@ import Projects3 from './pages/Projects/Projects3';
 import Contact1 from './pages/Contact/Contact1';
 import Contact2 from './pages/Contact/Contact2';
 import Contact3 from './pages/Contact/Contact3';
-import { useContext } from 'react';
-import { Button, Input } from '@chakra-ui/react'
+import { useContext, useState } from 'react';
+import { Button, CloseButton, Drawer, Portal  } from '@chakra-ui/react'
+import barsIcon from './images/bars-icon.png';
 
 function App() {
-
+  const [openDrawer, setOpenDrawer] = useState(false);
   const {currentPage, setCurrentPage} = useContext(PortfolioContext);
 
   function changeClass(linkName) {
@@ -26,19 +27,60 @@ function App() {
     return classN;
   }
 
+  function getLogoArea(areaType) {
+    return (
+        <div className={`logo-area ${areaType}`}>
+          <p>Logo area test</p>
+        </div>
+    );
+  }
+
   function getContainer2(areaType = "primary") {
     console.log('getContainer2 areaType: ', areaType);
     return (
       <div className={`container2 ${areaType}`}>
-          <div className={`logo-area primary`}>
-            <p>Logo area test</p>
-          </div>
+          {getLogoArea('primary')}
           <Routes>
             <Route path="/" element={<Home2 />} />
             <Route path="/projects" element={<Projects2 />} />
             <Route path="/contact" element={<Contact2 />} />
           </Routes>
       </div>
+    );
+  }
+
+  function getNavArea(className) {
+    return (
+      <nav className={className}>
+        <ul>
+          <li>
+            <div className={getClass('Home')} onClick={() => {changeClass("Home")}}>
+              <Link to="/"><p>Home</p></Link>
+            </div>
+          </li>
+          <li>
+            <div className={getClass('Projects')} onClick={() => {changeClass("Projects")}}>
+              <Link to="/projects"><p>Projects</p></Link>
+            </div>
+          </li>
+            <div className={getClass('Contact')} onClick={() => {changeClass("Contact")}}>
+              <Link to="/contact"><p>Contact</p></Link>
+            </div>
+          <li>
+            <div className={getClass('GitHub')}>
+              <p><a href="https://github.com/JohnsonHarleyR" target="_blank">GitHub</a></p>
+            </div>
+          </li><li>
+            <div className={getClass('LinkedIn')}>
+            <p><a href="https://www.linkedin.com/in/johnsonharleyr" target="_blank">LinkedIn</a></p>
+            </div>
+          </li><li>
+            <div className={getClass('Resume')}>
+            <p><a href="src/assets/resume.pdf" target="_blank">Resume</a></p>
+            </div>
+          </li>
+        </ul>
+      </nav>
     );
   }
 
@@ -50,39 +92,42 @@ function App() {
         <section className="right-area">
           <div className="container1">
             <header>
-            <div className='logo-area secondary'>
-                      <p>Logo area test</p>
-                    </div>
-              <nav>
-                <ul>
-                  <li>
-                    <div className={getClass('Home')} onClick={() => {changeClass("Home")}}>
-                      <Link to="/"><p>Home</p></Link>
-                    </div>
-                  </li>
-                  <li>
-                    <div className={getClass('Projects')} onClick={() => {changeClass("Projects")}}>
-                      <Link to="/projects"><p>Projects</p></Link>
-                    </div>
-                  </li>
-                    <div className={getClass('Contact')} onClick={() => {changeClass("Contact")}}>
-                      <Link to="/contact"><p>Contact</p></Link>
-                    </div>
-                  <li>
-                    <div className={getClass('GitHub')}>
-                      <p><a href="https://github.com/JohnsonHarleyR" target="_blank">GitHub</a></p>
-                    </div>
-                  </li><li>
-                    <div className={getClass('LinkedIn')}>
-                    <p><a href="https://www.linkedin.com/in/johnsonharleyr" target="_blank">LinkedIn</a></p>
-                    </div>
-                  </li><li>
-                    <div className={getClass('Resume')}>
-                    <p><a href="src/assets/resume.pdf" target="_blank">Resume</a></p>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
+              {getLogoArea('secondary')}
+
+              {/* Make an empty box replace the logo area if the logo is gone - helps with alignment */}
+              <div className={'secondary-logo-replacement'}></div>
+
+              {/* Default nav */}
+              {getNavArea('primary')}
+
+              {/* mobile nav */}
+              <div className="secondary-nav">
+                <Drawer.Root open={openDrawer} onOpenChange={(e) => setOpenDrawer(e.open)}>
+                  <Drawer.Trigger asChild>
+                    <button className="menu-button">
+                      {/* <HamburgerIcon color="white" /> */}
+                      <img className="menu-icon" src={barsIcon} />
+                    </button>
+                  </Drawer.Trigger>
+                  <Portal className="drawer-area">
+                    <Drawer.Backdrop />
+                    <Drawer.Positioner>
+                      <Drawer.Content>
+                        <Drawer.Header className="drawer-background">
+                          <Drawer.Title className="drawer-title">Navigation</Drawer.Title>
+                        </Drawer.Header>
+                        <Drawer.Body className="drawer-background">
+                          {getNavArea("secondary")}
+                        </Drawer.Body>
+                        <Drawer.CloseTrigger asChild>
+                          <CloseButton  className="menu-button" size="md" />
+                        </Drawer.CloseTrigger>
+                      </Drawer.Content>
+                    </Drawer.Positioner>
+                  </Portal>
+                </Drawer.Root>
+              </div>
+
             </header>
             {/* Put container2 here if the screen is a portrait or on mobile */}
             {getContainer2('secondary')}
@@ -99,9 +144,6 @@ function App() {
           
           {/* Light blue area below main area */}
           <div className='container3'>
-            <Button colorScheme={"blue"}>Chakra Button</Button>
-            <input placeholder="test" />
-            <Input placeholder="test"/>
             <Routes>
               <Route path="/" element={<Home3 />} />
               <Route path="/projects" element={<Projects3 />} />

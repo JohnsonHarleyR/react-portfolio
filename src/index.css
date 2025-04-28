@@ -11,6 +11,8 @@
   --container1-width: 67%;
   --container2-width: 33%;
 
+  --right-area-margin: 30px;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
