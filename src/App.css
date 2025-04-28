@@ -96,7 +96,7 @@ nav.primary .header-link.current p {
 } */
 
 nav.secondary {
-  border-top: 1px solid var(--medium-neutral-color);
+  /* border-top: 1px solid var(--medium-neutral-color); */
   padding-top: 25px;
   /* background-color: red; */
 }
