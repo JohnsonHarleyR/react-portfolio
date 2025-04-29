@@ -141,7 +141,6 @@ function App() {
                 <Drawer.Root open={openDrawer} onOpenChange={(e) => setOpenDrawer(e.open)}>
                   <Drawer.Trigger asChild>
                     <button className="menu-button">
-                      {/* <HamburgerIcon color="white" /> */}
                       <img className="menu-icon" src={barsIcon} />
                     </button>
                   </Drawer.Trigger>
@@ -179,13 +178,14 @@ function App() {
           
           
           {/* Light blue area below main area */}
-          {/* <div className='container3'>
-            <Routes>
+          <div className='container3'>
+            {/* <Routes>
               <Route path="/" element={<Home3 />} />
               <Route path="/projects" element={<Projects3 />} />
               <Route path="/contact" element={<Contact3 />} />
-            </Routes>
-          </div> */}
+            </Routes> */}
+            <footer>A footer can go here.</footer>
+          </div>
 
         </section>
         

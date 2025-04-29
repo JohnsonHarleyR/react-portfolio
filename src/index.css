@@ -155,10 +155,11 @@
   --text-fonts: 'Parkinsans', 'Patua One', 'Roboto', 'Pridi', serif;
   --default-letter-spacing: 1px;
 
-  --container1-width: 67%;
-  --container2-width: 33%;
+  --container1-width: 70%;
+  --container2-width: 30%;
 
   --right-area-margin: 30px;
+  --default-padding: 20px;
 
   /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;

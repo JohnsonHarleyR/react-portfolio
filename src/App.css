@@ -16,6 +16,7 @@ main {
 .menu-icon {
   width: 36px;
   height: 33px;
+  min-width: 33px;
 }
 
 .menu-button {
@@ -23,6 +24,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10;
+  padding: 10px;
 }
 
 .menu-button:hover {
@@ -46,6 +49,11 @@ main {
   width: 100%;
 }
 
+
+.container2, .container3, .page-area-1 {
+  padding: var(--default-padding);
+}
+
 header {
   background-color: var(--secondary-color);
   display: flex;
@@ -53,6 +61,7 @@ header {
   height: 50px;
   align-items: center;
   margin-top: var(--right-area-margin);
+  padding: 0;
 }
 
 
@@ -65,6 +74,10 @@ header {
 /* .right-divider {
   border-right: 1.5px solid var(--dark-neutral-color);
 } */
+
+nav {
+  padding: 0;
+}
 
 nav.primary ul {
   list-style: none;
@@ -109,14 +122,8 @@ nav.primary .header-link.current p {
   font-weight: bold;
 }
 
-/* .chakra-drawer {
-  width: 200px;
-} */
-
 nav.secondary {
-  /* border-top: 1px solid var(--medium-neutral-color); */
   padding-top: 15px;
-  /* background-color: red; */
 }
 
 nav.secondary .header-link {
@@ -184,17 +191,19 @@ nav.secondary .header-link p:hover, nav.secondary .header-link a:hover{
 .container2.secondary {
   width: 100%;
   display: none;
+  margin-top: var(--right-area-margin);
 }
 
 .container3 {
   width: 100%;
   background-color: var(--highlight-color);
+  color: var(--dark-neutral-color);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-self: flex-end;
   flex-grow: 1;
-  margin-bottom: var(--right-area-margin);
+  /* margin-bottom: var(--right-area-margin); */
 }
 
 /* Change layout style for mobile or tablet when vertical - change menu to hamburger */
