@@ -55,10 +55,16 @@ header {
   margin-top: var(--right-area-margin);
 }
 
+
+
 .secondary-logo-replacement {
   height: 100%;
   width: 100%;
 }
+
+/* .right-divider {
+  border-right: 1.5px solid var(--dark-neutral-color);
+} */
 
 nav.primary ul {
   list-style: none;
@@ -83,11 +89,23 @@ nav.primary .header-link p, nav.primary .header-link a {
   align-items: center;
   justify-content: center;
   display: flex;
+  font-family: var(--title-fonts);
+  font-weight: bold;
+  letter-spacing: var(--default-letter-spacing);
+}
+
+nav.primary .header-link a {
+  background-color: var(--secondary-dark-color);
+  font-weight: normal;
 }
 
 nav.primary .header-link.current p {
   color: var(--secondary-color);
   background-color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.header-link.bold {
   font-weight: bold;
 }
 
@@ -97,7 +115,7 @@ nav.primary .header-link.current p {
 
 nav.secondary {
   /* border-top: 1px solid var(--medium-neutral-color); */
-  padding-top: 25px;
+  padding-top: 15px;
   /* background-color: red; */
 }
 
@@ -106,12 +124,15 @@ nav.secondary .header-link {
 }
 
 nav.secondary .header-link p, nav.secondary .header-link a {
-  font-size: 25px;
+  font-size: 23px;
   color: var(--highlight-color);
 }
 
 nav.secondary .header-link.current p {
   font-weight: bold;
+}
+
+nav.secondary .header-link p:hover, nav.secondary .header-link a:hover{
   text-decoration: underline;
 }
 
@@ -128,9 +149,11 @@ nav.secondary .header-link.current p {
 }
 
 .drawer-title {
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+  font-family: var(--title-fonts);
+  letter-spacing: var(--title-letter-spacing);
 }
 
 .container1 {

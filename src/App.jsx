@@ -19,13 +19,21 @@ function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const {currentPage, setCurrentPage} = useContext(PortfolioContext);
 
+  function clickDrawerLink() {
+    setOpenDrawer('false');
+  }
+
   function changeClass(linkName) {
     setCurrentPage(linkName);
   }
 
-  function getClass(linkName) {
-    let classN = linkName === currentPage ? 'header-link current' : 'header-link';
-    return classN;
+  function getClass(linkName, extra = null) {
+    let className = linkName === currentPage ? 'header-link current' : 'header-link';
+    
+    if (extra !== null) {
+      className += ` ${extra}`
+    }
+    return className;
   }
   
   function openResume() {
@@ -41,7 +49,6 @@ function App() {
   }
 
   function getContainer2(areaType = "primary") {
-    console.log('getContainer2 areaType: ', areaType);
     return (
       <div className={`container2 ${areaType}`}>
           {getLogoArea('primary')}
@@ -55,41 +62,57 @@ function App() {
   }
 
   function getNavArea(className) {
+
+    let contactClassName = className === 'primary' ? getClass('Contact', 'right-divider') :getClass('Contact');
+
+    const doOnClick = (onLinkPress) => {
+
+      //Only close the drawer if the it's not a primary nav
+      let shouldCloseDrawer = className === 'secondary';
+
+      // do the function that was passed first
+      onLinkPress();
+
+      // if the drawer should close, then close the drawer
+      if (shouldCloseDrawer) {
+        setOpenDrawer(false);
+      }
+
+    }
+
     return (
       <nav className={className}>
         <ul>
           <li>
-            <div className={getClass('Home')} onClick={() => {changeClass("Home")}}>
+            <div className={getClass('Home')} onClick={() => {doOnClick(() => {changeClass("Home")})}}>
               <Link to="/"><p>Home</p></Link>
             </div>
           </li>
           <li>
-            <div className={getClass('Projects')} onClick={() => {changeClass("Projects")}}>
+            <div className={getClass('Projects')} onClick={() => {doOnClick(() => {changeClass("Projects")})}}>
               <Link to="/projects"><p>Projects</p></Link>
             </div>
           </li>
           <li>
-            <div className={getClass('GitHub')}>
-              <p><a href="https://github.com/JohnsonHarleyR" target="_blank">GitHub</a></p>
+            <div className={contactClassName} onClick={() => {doOnClick(() => {changeClass("Contact")})}}>
+              <Link to="/contact"><p>Contact</p></Link>
             </div>
           </li>
           <li>
-            <div className={getClass('LinkedIn')}>
-            <p><a href="https://www.linkedin.com/in/johnsonharleyr" target="_blank">LinkedIn</a></p>
-            </div>
-          </li>
-          <li>
-            <div className={getClass('Resume')}>
-            <p className="resume-link">
-              {/* Resume */}
-              <a onClick={openResume} target="_blank">Resume</a>
-              {/* <a href="src/assets/resume.pdf" target="_blank">Resume</a> */}
+            <div className={getClass('Resume', 'dark')}>
+              <p className="resume-link">
+                <a onClick={() => {doOnClick(() => {openResume()})}} target="_blank">Resume</a>
               </p>
             </div>
           </li>
           <li>
-            <div className={getClass('Contact')} onClick={() => {changeClass("Contact")}}>
-              <Link to="/contact"><p>Contact</p></Link>
+            <div className={getClass('GitHub', 'dark')}>
+              <p><a href="https://github.com/JohnsonHarleyR" target="_blank" onClick={() => {doOnClick(() => {})}}>GitHub</a></p>
+            </div>
+          </li>
+          <li>
+            <div className={getClass('LinkedIn', 'dark')}>
+            <p><a href="https://www.linkedin.com/in/johnsonharleyr" target="_blank"  onClick={() => {doOnClick(() => {})}}>LinkedIn</a></p>
             </div>
           </li>
         </ul>
@@ -156,13 +179,13 @@ function App() {
           
           
           {/* Light blue area below main area */}
-          <div className='container3'>
+          {/* <div className='container3'>
             <Routes>
               <Route path="/" element={<Home3 />} />
               <Route path="/projects" element={<Projects3 />} />
               <Route path="/contact" element={<Contact3 />} />
             </Routes>
-          </div>
+          </div> */}
 
         </section>
         

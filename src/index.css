@@ -1,19 +1,166 @@
+/* Serif */
+
+@font-face {
+  font-family: "Patua One";
+  src: url("fonts/PatuaOne/PatuaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/RobotoSerif-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/RobotoSerif-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/RobotoSerif-ExtraBold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/RobotoSerif-Light.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/RobotoSerif-Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Pridi";
+  src: url("fonts/Pridi/Pridi-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Pridi";
+  src: url("fonts/Pridi/Pridi-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Pridi";
+  src: url("fonts/Pridi/Pridi-Light.ttf");
+  font-weight: lighter;
+}
+
+
+
+/* Sans serif */
+@font-face {
+  font-family: "Sunflower";
+  src: url("fonts/Sunflower/Sunflower-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Sunflower";
+  src: url("fonts/Sunflower/Sunflower-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Sunflower";
+  src: url("fonts/Sunflower/Sunflower-Light.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Cardo";
+  src: url("fonts/Cardo/Cardo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-ExtraBold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Parkinsans";
+  src: url("fonts/Parkinsans/Parkinsans-Light.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("fonts/LibreFranklin/LibreFranklin-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("fonts/LibreFranklin/LibreFranklin-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("fonts/LibreFranklin/LibreFranklin-ExtraBold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("fonts/LibreFranklin/LibreFranklin-Light.ttf");
+  font-weight:lighter;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("fonts/LibreFranklin/LibreFranklin-Italic.ttf");
+  font-style: italic;
+}
+
 :root {
   --primary-color: #00A6D5;
   --secondary-color: #5D5FEF;
+  --secondary-dark-color: #5053d4;
   --highlight-color: #E0F7FA;
   --accent-color: #FF6B4A;
-  --accent-dark-color: #ed451f;
+  --accent-contrast-color: #ff431a;
   --dark-neutral-color: #2B2D42;
   --medium-neutral-color: #D3D3D3;
   --light-neutral-color: #FFFFFF;
+
+  --title-fonts: 'Sunflower', 'Libre Franklin', 'Parkinsans', 'Cardo', sans-serif;
+  --text-fonts: 'Parkinsans', 'Patua One', 'Roboto', 'Pridi', serif;
+  --default-letter-spacing: 1px;
 
   --container1-width: 67%;
   --container2-width: 33%;
 
   --right-area-margin: 30px;
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -42,11 +189,22 @@ body {
   min-height: 100vh; */
   background-color: var(--dark-neutral-color);
   color: var(--highlight-color);
+  font-family: var(--text-fonts);
+
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--title-fonts);
+  letter-spacing: var(--default-letter-spacing);
 }
 
 button {
@@ -62,9 +220,12 @@ button {
   transition: border-color 0.25s;
   max-width: 150px;
   height: 50px;
+  font-family: var(--text-fonts);
+  letter-spacing: var(--default-letter-spacing);
+  font-weight: bold;
 }
 button:hover {
-  background-color: var(--accent-dark-color);
+  background-color: var(--accent-contrast-color);
 }
 button:focus,
 button:focus-visible {
