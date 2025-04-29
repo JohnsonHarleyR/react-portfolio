@@ -123,8 +123,11 @@ function App() {
   return (
     <main>
       <Router>
-        {/* Cerulean area on the left side for desktop */}
-        {getContainer2('primary')}
+        <section className='left-area'>
+          {/* Cerulean area on the left side for desktop */}
+          {getContainer2('primary')}
+        </section>
+
         <section className="right-area">
           <div className="container1">
             <header>

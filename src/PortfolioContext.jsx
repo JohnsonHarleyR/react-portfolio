@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { fetchAllProjectData } from "./js/fetch-data";
 
 
 const PortfolioContext = createContext();
@@ -20,8 +21,23 @@ const PortfolioProvider = ({children}) => {
     }
 
     const [currentPage, setCurrentPage] = useState(determineInitialPage());
+    const [projectData, setProjectData] = useState(null);
 
-    return <PortfolioContext.Provider value={{currentPage, setCurrentPage}}>
+    const isProjectDataLoaded = projectData !== null;
+
+    useEffect(() => {
+        //load the project data
+        fetchAllProjectData(setProjectData);
+    }, [])
+
+    useEffect(() => {
+        console.log('projectData', projectData);
+        console.log('isProjectDataLoaded?', isProjectDataLoaded);
+    }, [projectData])
+
+    return <PortfolioContext.Provider value={{
+        currentPage, setCurrentPage, projectData, isProjectDataLoaded,
+        }}>
         {children}
     </PortfolioContext.Provider>
 }
