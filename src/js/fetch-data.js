@@ -1,5 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
-import { projectTableId, projectSupabaseKey } from './private';
+// import { projectTableId, projectSupabaseKey } from './private';
+
+const projectTableId = process.env.PROJECTS_TABLE_ID;
+const projectSupabaseKey = process.env.PROJECTS_SUPABASE_KEY;
 
 function getSupabaseUrl(tableId) {
   return `https://${tableId}.supabase.co`;

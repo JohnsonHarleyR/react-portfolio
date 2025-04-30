@@ -16,8 +16,6 @@ const ProjectCard = ({data}) => {
     }
 
     function createLinkButton(text, link, isDisabled = false) {
-        console.log('creating button for ', text);
-        console.log('isDisabled?', isDisabled);
         let modifiedLink = isDisabled ? "" : link;
         let linkArea = !isDisabled ? 
             (<a className="button-link-area" href={modifiedLink} target="_blank">{text}</a>)
@@ -37,8 +35,7 @@ const ProjectCard = ({data}) => {
             </>
         );
     }
-
-    console.log('ProjectCard data:', data);
+    
     return (
         <>
             <Card.Root width="300px" variant="elevated">

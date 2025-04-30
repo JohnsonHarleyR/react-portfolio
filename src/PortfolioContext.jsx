@@ -30,11 +30,6 @@ const PortfolioProvider = ({children}) => {
         fetchAllProjectData(setProjectData);
     }, []);
 
-    useEffect(() => {
-        console.log('projectData', projectData);
-    }, 
-    [projectData]);
-
     return <PortfolioContext.Provider value={{
         currentPage, setCurrentPage, projectData, isProjectDataLoaded,
         }}>
