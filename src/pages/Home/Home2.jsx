@@ -3,9 +3,9 @@
 const Home2 = () => {
 
     return (
-        <>
-            <button>Home2</button>
-        </>
+        <div className="page-area-2 home">
+            <h2>Test test test test test</h2>
+        </div>
     );
 }
 

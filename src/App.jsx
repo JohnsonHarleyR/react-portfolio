@@ -3,26 +3,18 @@ import { PortfolioContext } from './PortfolioContext'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home1 from './pages/Home/Home1';
 import Home2 from './pages/Home/Home2';
-import Home3 from './pages/Home/Home3';
 import Projects1 from './pages/Projects/Projects1';
 import Projects2 from './pages/Projects/Projects2';
-import Projects3 from './pages/Projects/Projects3';
 import Contact1 from './pages/Contact/Contact1';
 import Contact2 from './pages/Contact/Contact2';
-import Contact3 from './pages/Contact/Contact3';
 import { useContext, useState } from 'react';
-import { Button, CloseButton, Drawer, Portal  } from '@chakra-ui/react'
+import {CloseButton, Drawer, Portal  } from '@chakra-ui/react'
 import barsIcon from './images/bars-icon.png';
 import resume from './assets/resume.pdf';
-import PButton from './components/PButton/PButton';
 
 function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const {currentPage, setCurrentPage} = useContext(PortfolioContext);
-
-  function clickDrawerLink() {
-    setOpenDrawer('false');
-  }
 
   function changeClass(linkName) {
     setCurrentPage(linkName);

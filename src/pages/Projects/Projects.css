@@ -12,3 +12,61 @@
 .bottom-message {
     justify-self: center;
 }
+
+.page-area-2.projects h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.page-area-2.projects ul {
+    width: 100%;
+    align-self: left;
+    list-style-type: none;
+      
+}
+
+.page-area-2.projects li {
+    padding-bottom: 10px;
+}
+
+.page-area-2.projects li a {
+    color: var(--highlight-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.page-area-2.projects li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .page-area-2 .projects {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-area-2.projects p {
+        text-align: center;
+    }
+    
+    .page-area-2.projects ul {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .page-area-2.projects li {
+        padding: 5px;
+    }
+    
+    .page-area-2.projects li a {
+        color: var(--highlight-color);
+        font-weight: bold;
+        font-size: 18px;
+    }
+}

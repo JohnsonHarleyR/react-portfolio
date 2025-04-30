@@ -84,12 +84,6 @@
 
 @font-face {
   font-family: "Parkinsans";
-  src: url("fonts/Parkinsans/Parkinsans-Italic.ttf");
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Parkinsans";
   src: url("fonts/Parkinsans/Parkinsans-Regular.ttf");
 }
 
@@ -200,7 +194,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h1,h2,h3,h4,h5,h6 {
