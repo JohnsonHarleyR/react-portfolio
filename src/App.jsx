@@ -187,7 +187,11 @@ function App() {
               <Route path="/projects" element={<Projects3 />} />
               <Route path="/contact" element={<Contact3 />} />
             </Routes> */}
-            <footer>A footer can go here.</footer>
+            <footer>
+              <p>
+                A <b>footer</b> can go here.
+              </p>
+            </footer>
           </div>
 
         </section>

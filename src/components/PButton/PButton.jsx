@@ -3,19 +3,19 @@ import './PButton.css';
 
 const PButton = ({
     children,
-    action = () => {},
-    className = "p-button",
+    onClick = () => {},
+    addedClassNames = "",
     isDisabled = false,
     size = "md", // xs, sm, md, lg, xl
     ref = null
 }) => {
 
-    const newClassName = isDisabled ? `${className} disabled` : className;
+    const newClassName = isDisabled ? `p-button ${addedClassNames} disabled` : 'p-button ${addedClassNames}';
 
     return (
         <Button
          className={newClassName}
-         onClick={action}
+         onClick={onClick}
          disabled={isDisabled}
          size={size}
          ref={ref}>
