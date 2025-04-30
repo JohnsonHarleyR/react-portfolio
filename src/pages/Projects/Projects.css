@@ -1,0 +1,14 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects > * {
+    padding: 10px;
+}
+
+.bottom-message {
+    justify-self: center;
+}

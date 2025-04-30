@@ -14,6 +14,7 @@ import { useContext, useState } from 'react';
 import { Button, CloseButton, Drawer, Portal  } from '@chakra-ui/react'
 import barsIcon from './images/bars-icon.png';
 import resume from './assets/resume.pdf';
+import PButton from './components/PButton/PButton';
 
 function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -182,15 +183,14 @@ function App() {
           
           {/* Light blue area below main area */}
           <div className='container3'>
-            {/* <Routes>
-              <Route path="/" element={<Home3 />} />
-              <Route path="/projects" element={<Projects3 />} />
-              <Route path="/contact" element={<Contact3 />} />
-            </Routes> */}
             <footer>
-              <p>
-                A <b>footer</b> can go here.
+              <p className="copyright">
+                ©2025 Harley Johnson
               </p>
+              <p className="react-made">
+                <a target="_blank" href="https://github.com/JohnsonHarleyR/react-portfolio"><b>Made in React JS</b></a>
+              </p>
+              {/* <PButton size="xs">See Code</PButton> */}
             </footer>
           </div>
 

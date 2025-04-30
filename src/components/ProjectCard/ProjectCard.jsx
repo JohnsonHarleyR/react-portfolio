@@ -59,7 +59,6 @@ const ProjectCard = ({data}) => {
                     
                 </Card.Body>
             </Card.Root>
-            <div><p>Project Card</p></div>
         </>
     );
 }

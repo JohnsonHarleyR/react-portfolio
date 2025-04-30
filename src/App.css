@@ -199,10 +199,31 @@ nav.secondary .header-link p:hover, nav.secondary .header-link a:hover{
   color: var(--dark-neutral-color);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-self: flex-end;
-  /* flex-grow: 1; */
-  /* margin-bottom: var(--right-area-margin); */
+  align-items: center;
+  justify-self: center;
+  padding: 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.react-made b {
+  color: var(--secondary-color);
+}
+
+.react-made a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  color: var(--dark-neutral-color);
+  margin-bottom: 5px;
+  font-weight:bold;
 }
 
 /* Change layout style for mobile or tablet when vertical - change menu to hamburger */
