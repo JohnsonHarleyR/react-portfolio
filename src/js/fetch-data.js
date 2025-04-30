@@ -23,7 +23,7 @@ export async function fetchAllProjectData(setData) {
     for (const project of projects) {
       formattedProjects.push({
         ...project,
-        image: `../public/images/projects/${project.image}`
+        image: `/images/projects/${project.image}`
       });
     }
     setData(formattedProjects);
