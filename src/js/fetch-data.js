@@ -1,5 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
-import { projectTableId, projectSupabaseKey, getSupabaseUrl } from './private';
+import { projectTableId, projectSupabaseKey } from './private';
+
+function getSupabaseUrl(tableId) {
+  return `https://${tableId}.supabase.co`;
+}
 
 const projectSupabase = createClient(getSupabaseUrl(projectTableId), projectSupabaseKey)
 

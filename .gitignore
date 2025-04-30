@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 src/js/private.js
+.env
