@@ -19,6 +19,5 @@ export async function fetchAllProjectData(setData) {
         image: `../public/images/projects/${project.image}`
       });
     }
-    console.log('formattedProjects', formattedProjects);
     setData(formattedProjects);
   }

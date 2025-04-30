@@ -1,0 +1,17 @@
+
+
+.p-button {
+    background-color: var(--accent-color);
+    font-family: var(--text-fonts);
+    font-weight: bold;
+    /* margin-top: var(--default-padding);
+    margin-bottom: var(--default-padding); */
+}
+
+.p-button:hover {
+    background-color: var(--accent-contrast-color);
+  }
+
+.p-button.disabled:hover {
+    background-color: var(--accent-color);
+}
