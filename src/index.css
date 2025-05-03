@@ -1,5 +1,4 @@
 /* Serif */
-
 @font-face {
   font-family: "Patua One";
   src: url("fonts/PatuaOne/PatuaOne-Regular.ttf");
@@ -149,8 +148,8 @@
   --text-fonts: 'Parkinsans', 'Patua One', 'Roboto', 'Pridi', serif;
   --default-letter-spacing: 1px;
 
-  --container1-width: 70%;
-  --container2-width: 30%;
+  --container1-width: 75%;
+  --container2-width: 25%;
 
   --right-area-margin: 30px;
   --default-padding: 20px;

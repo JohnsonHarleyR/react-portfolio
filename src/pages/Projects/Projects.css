@@ -5,9 +5,9 @@
     align-items: center;
 }
 
-.projects > * {
+/* .projects > * {
     padding: 10px;
-}
+} */
 
 .bottom-message {
     justify-self: center;
@@ -16,6 +16,7 @@
 .page-area-2.projects h2 {
     margin-bottom: 0;
     padding-bottom: 0;
+    justify-self: left;
 }
 
 .page-area-2.projects ul {
@@ -30,13 +31,14 @@
 }
 
 .page-area-2.projects li a {
-    color: var(--highlight-color);
+    color: var(--light-neutral-color);
     font-weight: bold;
     font-size: 20px;
 }
 
 .page-area-2.projects li a:hover {
-    text-decoration: underline;
+    color: var(--secondary-color);
+    /* text-decoration: underline; */
 }
 
 @media screen and (max-width: 900px) {

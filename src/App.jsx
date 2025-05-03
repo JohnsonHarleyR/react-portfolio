@@ -11,6 +11,7 @@ import { useContext, useState } from 'react';
 import {CloseButton, Drawer, Portal  } from '@chakra-ui/react'
 import barsIcon from './images/bars-icon.png';
 import resume from './assets/resume.pdf';
+import Logo from './components/Logo/Logo';
 
 function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -36,7 +37,7 @@ function App() {
   function getLogoArea(areaType) {
     return (
         <div className={`logo-area ${areaType}`}>
-          <p>Logo area test</p>
+          <Logo type={areaType} />
         </div>
     );
   }
