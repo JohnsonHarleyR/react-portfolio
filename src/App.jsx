@@ -45,7 +45,7 @@ function App() {
   function getContainer2(areaType = "primary") {
     return (
       <div className={`container2 ${areaType}`}>
-          {getLogoArea('primary')}
+          {getLogoArea(areaType)}
           <Routes>
             <Route path="/" element={<Home2 />} />
             <Route path="/projects" element={<Projects2 />} />
@@ -125,7 +125,7 @@ function App() {
         <section className="right-area">
           <div className="container1">
             <header>
-              {getLogoArea('secondary')}
+              {/* {getLogoArea('secondary')} */}
 
               {/* Make an empty box replace the logo area if the logo is gone - helps with alignment */}
               <div className={'secondary-logo-replacement'}></div>

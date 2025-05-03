@@ -42,15 +42,17 @@ main {
   max-width: 100vw;
 }
 
-.logo-area.primary {
+.logo-area.primary, .logo-area.secondary {
   display: flex;
+  justify-content: center;
 }
 
 .logo-area.secondary {
-  display: none;
-  background-color: var(--secondary-color);
+  /* display: none; */
+  display: flex;
+  /* background-color: var(--secondary-color);
   height: 100%;
-  width: 100%;
+  width: 100%; */
 }
 
 
@@ -59,7 +61,7 @@ main {
 }
 
 .container2.primary .page-area-2 {
-  margin-top: 70px;
+  margin-top: var(--default-padding);
 }
 
 header {
@@ -250,13 +252,13 @@ footer {
     width: 100%;
   }
 
-  .logo-area.primary {
+  /* .logo-area.primary {
     display: none;
   }
   
   .logo-area.secondary {
     display: flex;
-  }
+  } */
 
   .secondary-logo-replacement {
     display: none;

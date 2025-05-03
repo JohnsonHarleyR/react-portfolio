@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.page-area-2.projects p {
+    text-align: center;
+}
+
 /* .projects > * {
     padding: 10px;
 } */
@@ -16,13 +20,14 @@
 .page-area-2.projects h2 {
     margin-bottom: 0;
     padding-bottom: 0;
-    justify-self: left;
+    justify-self: center;
 }
 
 .page-area-2.projects ul {
     width: 100%;
-    align-self: left;
+    align-self: center;
     list-style-type: none;
+    text-align: center;
       
 }
 
@@ -48,9 +53,9 @@
         text-align: center;
     }
 
-    .page-area-2.projects p {
+    /* .page-area-2.projects p {
         text-align: center;
-    }
+    } */
     
     .page-area-2.projects ul {
         display: flex;
