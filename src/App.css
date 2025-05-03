@@ -166,6 +166,10 @@ nav.secondary .header-link p:hover, nav.secondary .header-link a:hover{
   letter-spacing: var(--title-letter-spacing);
 }
 
+.page-area-1 p, .page-area-2 p {
+  padding-bottom: var(--sm-padding);
+}
+
 .container1 {
   width: 100%;
   height: 100%;

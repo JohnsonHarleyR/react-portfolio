@@ -21,6 +21,7 @@
     margin-bottom: 0;
     padding-bottom: 0;
     justify-self: center;
+    text-align: center;
 }
 
 .page-area-2.projects ul {
@@ -28,7 +29,7 @@
     align-self: center;
     list-style-type: none;
     text-align: center;
-      
+
 }
 
 .page-area-2.projects li {
@@ -42,8 +43,8 @@
 }
 
 .page-area-2.projects li a:hover {
-    color: var(--secondary-color);
-    /* text-decoration: underline; */
+    color: var(--light-neutral-color);
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {
@@ -72,8 +73,12 @@
     }
     
     .page-area-2.projects li a {
-        color: var(--highlight-color);
+        color: var(--light-neutral-color);
         font-weight: bold;
         font-size: 18px;
     }
+
+    /* .page-area-2.projects li a:hover {
+        text-decoration: underline;
+    } */
 }
