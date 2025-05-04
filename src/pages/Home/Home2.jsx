@@ -1,11 +1,13 @@
-import PButton from "@/components/PButton/PButton";
+import ProfilePic from "@/components/ProfilePic/ProfilePic";
+import "./home.css";
 
 const Home2 = () => {
 
     return (
         <div className="page-area-2 home">
-            <PButton>Test</PButton>
-            <h2>Test test test test test</h2>
+            <h2>Harley Johnson</h2>
+            <p>UI/Full-Stack Developer</p>
+            <ProfilePic />
         </div>
     );
 }

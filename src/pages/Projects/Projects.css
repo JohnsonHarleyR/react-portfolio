@@ -7,6 +7,7 @@
 
 .page-area-2.projects p {
     text-align: center;
+    line-height: normal;
 }
 
 /* .projects > * {
@@ -18,10 +19,15 @@
 }
 
 .page-area-2.projects h2 {
-    margin-bottom: 0;
-    padding-bottom: 0;
+    /* margin-bottom: 0;
+    padding-bottom: 0; */
+    padding-bottom: var(--sm-padding);
     justify-self: center;
     text-align: center;
+}
+
+h1 {
+    padding-bottom: var(--default-padding);
 }
 
 .page-area-2.projects ul {

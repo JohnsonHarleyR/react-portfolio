@@ -1,3 +1,7 @@
+p {
+line-height: var(--default-line-height);
+}
+
 p b {
   color: var(--accent-color);
 }
@@ -9,6 +13,14 @@ main {
   display: flex;
   align-items: stretch;
   max-width: 100vw;
+}
+
+.profile-pic.secondary {
+  display: none;
+}
+
+.profile-pic {
+  margin-bottom: var(--default-padding);
 }
 
 .menu-icon {
@@ -167,7 +179,14 @@ nav.secondary .header-link p:hover, nav.secondary .header-link a:hover{
 }
 
 .page-area-1 p, .page-area-2 p {
-  padding-bottom: var(--sm-padding);
+  padding-bottom: var(--default-padding);
+}
+
+.page-area-2 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
 .container1 {
@@ -247,6 +266,20 @@ footer {
 
 /* Change header to hamburger menu too if it's on a phone */
 @media screen and (max-width: 900px) {
+  .profile-pic.secondary {
+    display: flex;
+  }
+
+  .profile-pic.primary {
+    display: none;
+  }
+
+  .page-area-1 {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   header {
     margin-top: 0;
     margin-bottom: 0;
@@ -288,6 +321,10 @@ footer {
 
 @media screen and (min-width: 900px) {
   .secondary-nav {
+    display: none;
+  }
+
+  .profile-pic.secondary {
     display: none;
   }
 }
