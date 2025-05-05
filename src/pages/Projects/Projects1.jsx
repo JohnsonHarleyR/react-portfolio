@@ -59,7 +59,19 @@ const Projects1 = () => {
         return howManyTimes;
     }
 
-    const isDefined = containerRef.current !== undefined;
+    function isContainerRefDefined() {
+        return containerRef.current !== undefined;
+    }
+
+    const [isDefined, setIsDefined] = useState(isContainerRefDefined());
+
+    // reload and recalculate important constants after the ref loads into the container
+    useEffect(() => {
+        console.log('check container ref again');
+        if (!isDefined & isContainerRefDefined() === true) {
+            setIsDefined(true);
+        }
+    }, [containerRef]);
 
     const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : 1;
 
