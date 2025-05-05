@@ -28,6 +28,7 @@
 
 h1 {
     padding-bottom: var(--default-padding);
+    margin-bottom: var(--sm-padding);
 }
 
 .page-area-2.projects ul {
@@ -51,6 +52,10 @@ h1 {
 .page-area-2.projects li a:hover {
     color: var(--light-neutral-color);
     text-decoration: underline;
+}
+
+.add-top-padding {
+    padding-top: 30px;
 }
 
 @media screen and (max-width: 900px) {

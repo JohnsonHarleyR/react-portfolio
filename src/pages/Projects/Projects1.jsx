@@ -80,7 +80,7 @@ const Projects1 = () => {
                 <Loading />
             )}
 
-            <p><b className="bottom-message">Visit my GitHub at the top to see even more!</b></p>
+            <p className="add-top-padding"><b className="bottom-message">Visit my GitHub at the top to see even more!</b></p>
         </div>
     );
 }
