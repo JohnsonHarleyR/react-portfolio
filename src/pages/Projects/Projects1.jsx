@@ -14,7 +14,6 @@ const Projects1 = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            console.log('window change detected');
             setWindowWidth(window.innerWidth);
         };
     
@@ -62,7 +61,7 @@ const Projects1 = () => {
 
     const isDefined = containerRef.current !== undefined;
 
-    const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : 3;
+    const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : 1;
 
     // TODO show loading icon until project data loads
     return (
