@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     background-color: var(--highlight-color);
     color: var(--dark-neutral-color);
@@ -21,6 +21,11 @@
 .card-title {
     font-size: 25px;
     color: var(--dark-neutral-color);
+    /* min-height: 66px; */
+}
+
+.description {
+    height: 100%;
 }
 
 .increase-top-margin {

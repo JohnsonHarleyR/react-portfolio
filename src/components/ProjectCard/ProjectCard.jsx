@@ -2,7 +2,7 @@ import "./ProjectCard.css";
 import { Card, Image, Text } from "@chakra-ui/react";
 import PButton from "../PButton/PButton";
 
-const ProjectCard = ({data}) => {
+const ProjectCard = ({data, cardWidth=280}) => {
 
     const {image, title, languages, description, codeLink, hasWebLink, webLink} = data;
 
@@ -38,7 +38,7 @@ const ProjectCard = ({data}) => {
     
     return (
         <>
-            <Card.Root width="300px" variant="elevated">
+            <Card.Root className="card-root" width={`${cardWidth}px`} variant="elevated">
                 <Card.Body gap="2" className="project-card">
                     <Card.Title className="card-title">{title}</Card.Title>
                     <Image src={image} />
@@ -47,7 +47,7 @@ const ProjectCard = ({data}) => {
                         <br></br>
                         {mapLanguages()}
                     </Text>
-                    <Card.Description className="text-color">
+                    <Card.Description className="description text-color">
                         {description}
                     </Card.Description>
                     <Card.Footer className="increase-top-margin" justifyContent="center">
