@@ -319,6 +319,7 @@ footer {
   }
 }
 
+/* TODO account for when page is exactly 900px */
 @media screen and (min-width: 900px) {
   .secondary-nav {
     display: none;

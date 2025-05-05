@@ -67,13 +67,19 @@ const Projects1 = () => {
 
     // reload and recalculate important constants after the ref loads into the container
     useEffect(() => {
-        console.log('check container ref again');
+        // console.log('check container ref again');
         if (!isDefined & isContainerRefDefined() === true) {
             setIsDefined(true);
         }
     }, [containerRef]);
 
-    const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : 1;
+    const estimatedWidth = windowWidth >= 900 ? windowWidth * .75 : windowWidth;
+    const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : getColumns(estimatedWidth);
+
+    // test
+    // if (isDefined) {
+    //     console.log(`test - estimatedWidth: ${estimatedWidth} actual container width: ${containerRef.current.offsetWidth}`);
+    // }
 
     // TODO show loading icon until project data loads
     return (
