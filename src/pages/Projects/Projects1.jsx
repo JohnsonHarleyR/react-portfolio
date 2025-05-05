@@ -1,5 +1,5 @@
 import { PortfolioContext } from "@/PortfolioContext";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import Loading from "@/components/Loading/Loading";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import "./Projects.css";
@@ -9,8 +9,28 @@ const Projects1 = () => {
 
     const containerRef = useRef();
     const {projectData, isProjectDataLoaded} = useContext(PortfolioContext);
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth); // for detecting changes
+
+    useEffect(() => {
+        const handleResize = () => {
+            console.log('window change detected');
+            setWindowWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const cardGap = 30;
     const cardWidth = 280;
+    const maxCardWidth = 320;
+
+    // TODO
+    // Finally, change cardWidth accordingly
 
     function getColumns(containerWidth) {
         // find out how many times it can be divided
