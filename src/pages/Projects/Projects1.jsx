@@ -26,21 +26,35 @@ const Projects1 = () => {
     }, []);
 
     const cardGap = 30;
-    const cardWidth = 280;
+    const minCardWidth = 280;
     const maxCardWidth = 320;
 
-    // TODO
-    // Finally, change cardWidth accordingly
+    const [cardWidth, setCardWidth] = useState(minCardWidth);
+
+    function getCardWidthWithoutGaps(containerWidth, howManyColumns) {
+        let newWidth = (containerWidth - 40 - (howManyColumns - 1) * cardGap) / howManyColumns;
+        return newWidth;
+    }
 
     function getColumns(containerWidth) {
         // find out how many times it can be divided
-        let howManyTimes = Math.floor(containerWidth / cardWidth);
+        let howManyTimes = Math.floor(containerWidth / minCardWidth);
 
         // now account for gaps and padding
-        let widthWithColumns = cardWidth * howManyTimes + 40 + (howManyTimes - 1) * cardGap;
-        console.log('widthWithColumns', widthWithColumns);
+        let widthWithColumns = minCardWidth * howManyTimes + 40 + (howManyTimes - 1) * cardGap;
         if (containerWidth < widthWithColumns) {
             howManyTimes -= 1;
+        }
+
+        // adjust card width according to how much the area width allows, within boundaries
+        let allowedCardWidth = getCardWidthWithoutGaps(containerWidth, howManyTimes);
+        // if allowedCardWidth is bigger than max card width, change it to max card width
+        if (allowedCardWidth > maxCardWidth) {
+            allowedCardWidth = maxCardWidth;
+        }
+        // if allowedCardWidth is not the same as the current card width, change the current width
+        if (allowedCardWidth !== cardWidth) {
+            setCardWidth(allowedCardWidth);
         }
 
         return howManyTimes;
@@ -49,8 +63,6 @@ const Projects1 = () => {
     const isDefined = containerRef.current !== undefined;
 
     const columns = isDefined ? getColumns(containerRef.current.offsetWidth) : 3;
-
-    console.log('area width: ' + (isDefined ? containerRef.current.offsetWidth : 'null') + ' columns: ' + columns);
 
     // TODO show loading icon until project data loads
     return (
