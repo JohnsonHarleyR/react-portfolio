@@ -15,11 +15,11 @@ const Home1 = () => {
             <ProfilePic className="profile-pic secondary" shape="circle" />
             <h1>Welcome!</h1>
             <p>
-                Hi, my name is Harley and I am a UI/full-stack software developer. I have 2.5 years of professional experience and 12+ years of self-taught experience. I completed a Java bootcamp with Grand Circus to earn a Java certificate, as well as from completing Dev-X and UI-X training courses at United Wholesale Mortgage. In a college-level Python course in high school, I won the award of "Most Outstanding Programmer".
+                Hi, my name is Harley and I am a UI/full-stack software developer. I have 2.5 years of professional experience and 12+ years of self-taught experience. I completed a Java bootcamp with Grand Circus to earn a Java certificate. I also completed the Dev-X and UI-X training courses while working at United Wholesale Mortgage. In a college-level Python course in high school, I won the award of "Most Outstanding Programmer".
             </p>
             
             <p>
-                Professionally, I’ve built full-stack applications using C#, Java, Python, JavaScript, React, SQL, and other language. I have a love for UI development, especially writing JavaScript and React, which comes from my artistic background and creativity. I am sharp when it comes to using HTML and CSS to create creative and responsive web pages. I am familiar with frameworks like Material UI, Bootstrap, Chakra UI, 11ty, Spring MVC, and others. I know how to unit test in JavaScript/React.
+                Professionally, I’ve built full-stack applications using C#, Java, Python, JavaScript, React, SQL, and other languages. I have a love for UI development, especially writing JavaScript and React, which comes from my artistic background and creativity. I am sharp when it comes to using HTML and CSS to create creative and responsive web pages. I am familiar with frameworks like Material UI, Bootstrap, Chakra UI, 11ty, Spring MVC, and others. I know how to unit test in JavaScript/React.
             </p>
 
             <p>
