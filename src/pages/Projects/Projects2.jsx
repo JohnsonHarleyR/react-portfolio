@@ -14,6 +14,7 @@ const Projects2 = () => {
                     </List.Item>
                 ))}
             </List.Root>
+            <p>See some of my UX and design related work <a href="https://www.pinterest.com/harleyj2930/_boards/">here</a>.</p>
         </div>
     );
 }
