@@ -58,6 +58,16 @@ h1 {
     padding-top: 30px;
 }
 
+
+#design-p {
+  padding-top: 10px;
+}
+
+#design-link {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
 @media screen and (max-width: 900px) {
     .page-area-2 .projects {
         justify-content: center;
