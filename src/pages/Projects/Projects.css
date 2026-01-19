@@ -65,7 +65,7 @@ h1 {
 
 #design-link {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 @media screen and (max-width: 900px) {
