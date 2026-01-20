@@ -23,7 +23,10 @@ const Home1 = () => {
             </p>
 
             <p>
-                I have built many back-end applications using C#, Java, Python, and other languages too. I’m comfortable working with databases and backend services. I can write SQL to build databases and executing SQL commands to connect them to C# and Java programa. I have experience unit testing in C# and Java as well.
+                I have built many back-end applications using C#, Java, Python, and other languages too. I’m comfortable working with databases and backend services. I can write SQL to build databases and execute SQL commands to connect them to C# and Java programs. I have experience unit testing in C# and Java as well.
+            </p>
+<p>
+                Finally, my Information Science degree has provided me with new abilities in UX design, HCD research, and prototyping. I know how to perform a task analysis and research users in order to improve web applications. My artist and design background make a good fit for UX designer positions.
             </p>
             <p>
                 I look forward to continue my journey of growth as a developer and artistic person, solving problems and creating software that is both powerful and user-friendly. I'm currently looking for full-time opportunities (open to contract or permanent roles) with teams where I can contribute both my technical skills and my creativity.
