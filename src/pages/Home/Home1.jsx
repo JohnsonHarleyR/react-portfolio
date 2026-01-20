@@ -14,8 +14,8 @@ const Home1 = () => {
         <div className="page-area-1 home">
             <ProfilePic className="profile-pic secondary" shape="circle" />
             <h1>Welcome!</h1>
-            <p>
-                Hi, my name is Harley and I am a UI/full-stack software developer. I have 2.5 years of professional experience and 12+ years of self-taught experience. I completed a Java bootcamp with Grand Circus to earn a Java certificate. I also completed the Dev-X and UI-X training courses while working at United Wholesale Mortgage. In a college-level Python course in high school, I won the award of "Most Outstanding Programmer".
+                        <p>
+                Hi, my name is Harley and I am a UI/full-stack software developer. I have 2.5 years of professional experience, a few years of classroom experience, and many years of self-taught experience. I completed a Java bootcamp with Grand Circus to earn a Java certificate. I also completed the Dev-X and UI-X training courses while working at United Wholesale Mortgage. In a college-level Python course in high school, I won the award of "Most Outstanding Programmer".
             </p>
             
             <p>
